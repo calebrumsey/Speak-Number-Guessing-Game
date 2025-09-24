@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Player</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <h1>Music Player</h1>
+
+  <div id="blur-bg"></div>
+  <div id="blur-bg-next"></div>
+<!-- ...rest of your HTML... -->
+  <div class="music-container" id="music-container">
+    <div class="music-info">
+      <h4 id="title"></h4>
+      <h5 id="artist"></h5>
+      <h6 id="album"></h6>
+
+      <div class="progress-container" id="progress-container">
+        <div class="progress" id="progress"></div>
+      </div>
+    </div>
+
+    <audio id="audio" src="music/egyptian-pools.mp3"></audio>
+
+    <div class="img-container">
+      <img src="images/egyptian-pools.jpg" alt="Album Cover" id="cover" />
+    </div>
+
+    <div class="navigation">
+      <button id="prev" class="action-btn"><i class="fas fa-backward"></i></button>
+      <button id="play" class="action-btn action-btn-big"><i class="fas fa-play"></i></button>
+      <button id="next" class="action-btn"><i class="fas fa-forward"></i></button>
+      <button id="loop" class="action-btn"><i class="fas fa-redo-alt"></i></button>
+
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
+    </div>
+  </div>
+</body>
+</html>
