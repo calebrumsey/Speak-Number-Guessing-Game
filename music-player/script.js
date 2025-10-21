@@ -2,7 +2,6 @@ const musicContainer = document.getElementById('music-container');
 const playBtn = document.getElementById('play');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
-
 const loopBtn = document.getElementById('loop');
 
 const audio = document.getElementById('audio');
@@ -10,11 +9,12 @@ const progress = document.getElementById('progress');
 const progressContainer = document.getElementById('progress-container');
 const title = document.getElementById('title');
 const cover = document.getElementById('cover');
+const artistEl = document.getElementById('artist');
+const albumEl = document.getElementById('album');
 
 const volumeSlider = document.getElementById('volumeSlider');
 
-const artistEl = document.getElementById('artist');
-const albumEl = document.getElementById('album');
+
 
 
 const songs = [
@@ -104,10 +104,8 @@ function swipeBackground(newImageUrl) {
   nextBg.style.backgroundImage = `url('${newImageUrl}')`;
   nextBg.style.left = '100vw'; // Reset position
 
-  // Trigger reflow for transition
   void nextBg.offsetWidth;
 
-  // Animate both divs
   currentBg.style.left = '-100vw';
   nextBg.style.left = '0';
 
@@ -120,10 +118,8 @@ function swipeBackground(newImageUrl) {
 }
 
 loopBtn.addEventListener('click', () => {
-  // 1. Toggle the built-in HTMLAudioElement 'loop' property
   audio.loop = !audio.loop;
   
-  // 2. Toggle a CSS class for visual feedback (e.g., make it pink when active)
   loopBtn.classList.toggle('active');
 
   volumeSlider.addEventListener('input', function() {
