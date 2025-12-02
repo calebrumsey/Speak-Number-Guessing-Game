@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #516dff;
+  color: #fff;
+  font-family: 'Press Start 2P', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  text-align: center;
+}
+
+.btn {
+  border: 0;
+  background-color: #fff;
+  color: #516dff;
+  padding: 15px 20px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  transition: margin 0.5s ease-out;
+}
+
+.choose-insect-btn img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.screen.up {
+  margin-top: -100vh;
+}
+
+a {
+  color: #fff;
+}
+
+h1 {
+  line-height: 1.4;
+}
+
+/* ... */
+
+.insects-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.insects-list li {
+  margin: 10px;
+}
+
+.choose-insect-btn {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  width: 150px;
+  height: 150px;
+}
+
+.choose-insect-btn:hover {
+  background-color: white;
+  color: #516dff;
+}
+
+.choose-insect-btn:active {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.time, .score {
+  position: absolute;
+  top: 20px;
+}
+
+.time {
+  left: 20px;
+}
+
+.score {
+  right: 20px;
+}
+
+/* Temporarily update the h5 class to include a class of visible */
+/*       <h5 id="message" class="message visible"> */
+
+.message {
+  line-height: 1.7;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  padding: 20px;
+  z-index: 100;
+  text-align: center;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -150%);
+  transition: transform 0.4s ease-in;
+}
+
+.message.visible {
+  transform: translate(-50%, 150%);
+  opacity: 1;
+}
+
+/* We can now remove the visible class from h5 */
+
+/* After the closing h5, temporarily add a div with a class of insect containing an image (the fly) so we can see it to style it */
+
+.insect {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.3s ease-in-out;
+
+}
+
+.insect img {
+  width: 100px;
+  height: 100px;
+}
+
+.insect.caught {
+  transform: translate(-50%, -50%) scale(0);
+  /* Temporarily add the class caught to the div class="insect" to test */
+}
+
+/* Game over / win overlay */
+.game-over.hidden { display: none; }
+
+.game-over {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+}
+
+.game-over-content {
+  background: #fff;
+  color: #516dff;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  width: min(480px, 90%);
+}
+
+.game-over-content h1 {
+  margin-top: 0;
+}
+
+.game-over-content p {
+  margin: 16px 0 24px;
+}
